@@ -11,6 +11,7 @@ apps=(
   svn
   tree
   git
+  ag
 )
 
 brew install "${apps[@]}"
