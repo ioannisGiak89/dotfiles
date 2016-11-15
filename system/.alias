@@ -1,0 +1,73 @@
+#ssh alias
+alias sparkbox='ssh -i /mnt/sysadmin/servers/sparkenergy.byng.uk.net/sparkenergy.pem root@sparkenergy.co.uk'
+alias sparkdevbox='ssh -i /mnt/sysadmin/servers/sparkenergy.byng.uk.net/sparkenergy.pem root@sparkdev.byng.uk.net'
+alias deva1='ssh -i /mnt/sysadmin/servers/dev-a1.byng.uk.net/dev-a1.pem root@dev-a1.byng.uk.net'
+alias vatplive='ssh -i /mnt/sysadmin/servers/vatp2.byng.uk.net/vatp2.pem root@54.72.199.43'
+alias oakamlive='ssh -i /mnt/sysadmin/servers/oakam.byng.uk.net/oakam.pem root@52.17.130.59'
+alias atlas='ssh -i /mnt/sysadmin/servers/ws01.atlas.byng.uk.net/atlascorp.pem root@ws01.atlas.byng.uk.net'
+alias consentz='ssh -i /mnt/sysadmin/servers/consentz-new-server/consentz.pem root@52.16.182.184'
+alias centos7='ssh -i /mnt/sysadmin/servers/test-centos7.byng.uk.net/test-centos7.pem root@development.pool.dev.byng.uk.net'
+alias poollive='ssh -i /mnt/sysadmin/servers/pool.byng.uk.net/pool.pem root@pool.byng.uk.net'
+
+# locale tail alias
+alias sparkloglocal='tail -f -n 0 /var/log/apache2/{*spark*/,}*log ~/Repos/*spark*/{var/,app/,}log{s,}/*log'
+alias vatploglocal='tail -f -n 0 /var/log/apache2/{*vatp2*/,}*log ~/Repos/*vatp2-cms*/website/{var/,app/,}log{s,}/*log'
+alias oakamloglocal='tail -f -n 0 /var/log/apache2/{*oakam*/,}*log ~/Repos/*oakam-cms*/website/{var/,app/,}log{s,}/*log'
+alias poolloglocal='tail -f -n 0 /var/log/apache2/{*the-pool*/,}*log ~/Repos/*the-pool*/website/{var/,app/,}log{s,}/*log'
+
+# remote tail alias
+alias sparkloguat='sparkdevbox tail -f -n 0 /var/www/public/uat/var/log/*log /var/www/switch/uat/logs/*.log /var/log/nginx/{*uat*/,}*log /var/log/php-fpm/*log /var/log/spark/api/wip/*log'
+alias sparklogwip='sparkdevbox tail -f -n 0 /var/www/public/wip/var/log/*log /var/www/switch/wip/logs/*.log /var/log/nginx/{*wip*/,}*log /var/log/php-fpm/*log /var/log/spark/api/wip/*log'
+
+# sync alias
+alias syncvatp='~/scripts/vatp2/sync/vatp2-rsync.sh'
+alias syncoakam='~/scripts/oakam-cms/oakam-sync.sh'
+alias syncbyng='~/scripts/byng-co/byng-sync.sh'
+alias syncpool='~/scripts/the-pool/pool-rsync.sh'
+alias syncspyscape='~/scripts/spyscape/spyscape-sync.sh'
+alias syncaffinityship='~/scripts/affinityship-cms/affinityship-sync.sh'
+alias syncicmm='~/scripts/icmm-cms/icmm-sync.sh'
+alias synchowdengrp='~/scripts/howdengrp/howdengrp.sh'
+alias syncdemica='~/scripts/demica/demica-sync.sh'
+
+# create new project alias
+alias hosts='sudo vim /etc/hosts'
+alias sitesav='cd /etc/apache2/sites-available'
+alias sitesen='cd /etc/apache2/sites-enabled'
+alias cnsite='~/scripts/virtualhost/createwebsite.sh'
+
+# apache alias
+alias reapache='sudo service apache2 restart'
+alias stpapache='sudo service apache2 stop'
+alias strapache='sudo service apache2 start'
+
+# mysql alias
+alias remysql='sudo service mysql restart'
+alias stpmysql='sudo service mysql stop'
+alias strmysql='sudo service mysql start'
+alias mysql='mysql -uroot -ppassword'
+
+# vm for IE alias
+alias ie6='rdesktop -g 1280x800 -k en-gb -u byng -p byng -a 16 -5 192.168.77.6:3389 &'
+alias ie7='rdesktop -g 1280x800 -k en-gb -u byng -p byng -a 16 -5 192.168.77.7:3389 &'
+alias ie8='rdesktop -g 1280x800 -k en-gb -u byng -p byng -a 16 -5 192.168.77.8:3389 &'
+alias ie9='rdesktop -g 1280x800 -k en-gb -u administrator -p byng -a 16 -5 192.168.77.9:3389 &'
+
+# services alias
+alias stpma='stpmysql && stpapache'
+alias strma='strmysql && strapache'
+
+# docker projects alias
+alias strdocker='stpma && docker-compose up -d'
+alias strspyscape='cd ~/Repos/spyscape-cms && strdocker && git up && xdg-open http://spyscape.dev/admin'
+alias straffinity='cd ~/Repos/affinityship && strdocker && git up && xdg-open http://affinity.dev/admin'
+alias stricmm='cd ~/Repos/icmm-cms && strdocker && git up && xdg-open http://icmm.dev/admin'
+alias strhowden='cd ~/Repos/howdengroup && strdocker && git up && xdg-open http://howden-group.dev/admin'
+alias strdemica='cd ~/Repos/demica && strdocker && git up && xdg-open http://demica.dev/admin'
+alias strpool='cd ~/Repos/the-pool && strdocker && git up && xdg-open http://pool.dev/admin'
+alias stroakam='cd ~/Repos/oakam-cms && strdocker && git up && xdg-open http://oakam.dev/admin'
+alias strvirgin='cd ~/Repos/vatp2-cms && git up && strdocker && xdg-open http://vsflyinghub.dev/admin'
+alias exec='~/scripts/docker/exec.sh'
+
+# gulp alias
+alias gbw='gulp build watch'
