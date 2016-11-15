@@ -5,7 +5,6 @@ apps=(
   coreutils
   ffmpeg
   gnu-sed --with-default-names
-  grep --with-default-names
   imagemagick
   python
   svn
