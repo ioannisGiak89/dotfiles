@@ -6,6 +6,6 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-if [ -f ~/dotfiles/system/.alias ]; then
-    . ~/dotfiles/system/.alias
+if [ -f "$HOME/dotfiles/system/.alias" ]; then
+    . "$HOME/dotfiles/system/.alias";
 fi

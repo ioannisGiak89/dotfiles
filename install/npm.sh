@@ -1,5 +1,9 @@
 brew install nvm
 
+if [ -f "$HOME/dotfiles/system/.nvm" ]; then
+    . "$HOME/dotfiles/system/.nvm";
+fi
+
 nvm install 6
 nvm use 6
 nvm alias default 6
