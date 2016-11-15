@@ -1,19 +1,15 @@
 [user]
 	name = Ioannis Giakoumidis
 	email = ioannis.giakoumidis@inviqa.com
-
 [github]
 	user = ioannisGiak89
-
 [core]
-	excludesfile = /home/byng/.gitignore
+	excludesfile = ~/.gitignore
 	editor = vim
-  filemode = false
-  trustctime = false
-  autocrlf = input
-
+	filemode = false
+	trustctime = false
+	autocrlf = input
 [alias]
-	# git alias
 	gs='git status'
 	gc='git checkout'
 	gpo='git push -u origin'
@@ -25,13 +21,11 @@
 	gd='git add'
 	gis='git stash'
 	grh='git reset HEAD'
-
 [pager]
 	diff = diff-so-fancy | less --tabs=4 -RFX
 	show = diff-so-fancy | less --tabs=4 -RFX
-
 [color]
-  ui = auto
+	ui = auto
 [color "branch"]
   current = yellow reverse
   local = yellow
