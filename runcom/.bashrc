@@ -10,6 +10,6 @@ if [ -f "$HOME/dotfiles/system/.alias" ]; then
     . "$HOME/dotfiles/system/.alias";
 fi
 
-if [ -f "$HOME/dotfiles/system/.git" ]; then
-    . "$HOME/dotfiles/system/.git";
+if [ -f "$HOME/dotfiles/system/.git-alias" ]; then
+    . "$HOME/dotfiles/system/.git-alias";
 fi

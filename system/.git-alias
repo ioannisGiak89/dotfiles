@@ -1,0 +1,11 @@
+# git alias
+alias gs='git status'
+alias gc='git checkout'
+alias gpo='git push -u origin'
+alias gp='git push'
+alias gm='git commit -m'
+alias gf='git diff'
+alias gb='git branch'
+alias gd='git add'
+alias gis='git stash'
+alias grh='git reset HEAD'
