@@ -17,11 +17,13 @@ ln -sfv "$DOTFILES_DIR/runcom/.bashrc" ~
 ln -sfv "$DOTFILES_DIR/runcom/.profile" ~
 ln -sfv "$DOTFILES_DIR/git/.gitconfig" ~
 ln -sfv "$DOTFILES_DIR/git/.gitignore" ~
+ln -sfv "$DOTFILES_DIR/vim/.vimrc" ~
 
 # Package managers & packages
 
 . "$DOTFILES_DIR/install/brew.sh"
 . "$DOTFILES_DIR/install/npm.sh"
+. "$DOTFILES_DIR/install/gem.sh"
 
 if [ "$(uname)" == $UNAME ]; then
   . "$DOTFILES_DIR/install/brew-cask.sh"

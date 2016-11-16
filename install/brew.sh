@@ -11,6 +11,7 @@ apps=(
   tree
   git
   ag
+  mysql
 )
 
 brew install "${apps[@]}"

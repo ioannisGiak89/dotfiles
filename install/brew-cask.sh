@@ -14,6 +14,8 @@ apps=(
   atom
   skype
   shimo
+  phpstorm
+  mysqlworkbench
 )
 
 brew cask install "${apps[@]}"
