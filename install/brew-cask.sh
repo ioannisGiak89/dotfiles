@@ -3,7 +3,6 @@
 apps=(
   dropbox
   firefox
-  firefox-nightly
   flux
   google-chrome
   google-chrome-canary
