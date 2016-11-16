@@ -75,11 +75,11 @@ set showmatch
 set smartcase
 
 " Colors
-
-syntax on
+syntax enable
 set cursorline
 se t_Co=16
 set background=dark
+colorscheme solarized
 let g:solarized_termcolors=256
 highlight clear SignColumn
 
