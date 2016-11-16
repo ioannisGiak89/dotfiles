@@ -1,6 +1,9 @@
 export PATH=$PATH:~/bin
 export PATH=$PATH:/usr/local/bin/
 
+# Set colors to match iTerm2 Terminal Colors
+export TERM=xterm-256color
+
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'

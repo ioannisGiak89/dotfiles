@@ -78,9 +78,9 @@ set smartcase
 
 syntax on
 set cursorline
+se t_Co=16
 set background=dark
 let g:solarized_termcolors=256
-colorscheme solarized
 highlight clear SignColumn
 
 " Scrolling
