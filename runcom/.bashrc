@@ -13,3 +13,7 @@ fi
 if [ -f "$HOME/dotfiles/system/.git-alias" ]; then
     . "$HOME/dotfiles/system/.git-alias";
 fi
+
+if [ -f "$HOME/dotfiles/system/.rmv" ]; then
+    . "$HOME/dotfiles/system/.rmv";
+fi
