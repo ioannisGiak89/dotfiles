@@ -1,4 +1,4 @@
-# Install packages
+#!/usr/bin/env bash
 
 apps=(
   bats
@@ -12,6 +12,8 @@ apps=(
   git
   ag
   mysql
+  docker
+  docker-machine
 )
 
 brew install "${apps[@]}"

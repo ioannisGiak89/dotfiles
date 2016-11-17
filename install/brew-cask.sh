@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Install packages
 
 apps=(
@@ -9,11 +11,11 @@ apps=(
   google-drive
   slack
   sourcetree
-  virtualbox
   skype
   shimo
   phpstorm
   mysqlworkbench
+  virtualbox
 )
 
 brew cask install "${apps[@]}"

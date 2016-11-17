@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 #ssh alias
 alias sparkbox='ssh -i /mnt/sysadmin/servers/sparkenergy.byng.uk.net/sparkenergy.pem root@sparkenergy.co.uk'
 alias sparkdevbox='ssh -i /mnt/sysadmin/servers/sparkenergy.byng.uk.net/sparkenergy.pem root@sparkdev.byng.uk.net'

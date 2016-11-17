@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 brew install nvm
 
 if [ -f "$HOME/dotfiles/system/.nvm" ]; then

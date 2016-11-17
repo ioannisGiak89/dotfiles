@@ -22,12 +22,13 @@ ln -sfv "$DOTFILES_DIR/vim/.vim" ~
 
 # Package managers & packages
 
-. "$DOTFILES_DIR/install/brew.sh"
 . "$DOTFILES_DIR/install/npm.sh"
 . "$DOTFILES_DIR/install/gem.sh"
 
 if [ "$(uname)" == $UNAME ]; then
   . "$DOTFILES_DIR/install/brew-cask.sh"
+  . "$DOTFILES_DIR/install/brew.sh"
+  . "$DOTFILES_DIR/dinghy/dinghy.sh"
 fi
 
 # Run tests
