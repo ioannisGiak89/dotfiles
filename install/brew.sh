@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 apps=(
+  libyaml
   bats
   coreutils
   ffmpeg

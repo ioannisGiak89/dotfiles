@@ -7,7 +7,6 @@ apps=(
   firefox
   flux
   google-chrome
-  google-chrome-canary
   google-drive
   slack
   sourcetree
