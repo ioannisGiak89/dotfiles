@@ -4,9 +4,9 @@ if [ -f "$HOME/dotfiles/system/.nvm" ]; then
     . "$HOME/dotfiles/system/.nvm";
 fi
 
-nvm install 6
-nvm use 6
-nvm alias default 6
+nvm install lts/boron
+nvm use lts/boron
+nvm alias default lts/boron
 
 # Globally install with npm
 
