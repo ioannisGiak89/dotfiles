@@ -8,7 +8,7 @@ export TERM=xterm-256color
 export CLICOLOR=1
 
 # some more ls aliases
-alias ll='ls -alF'
+alias ll='ls -ahl --color --group-directories-first'
 alias la='ls -A'
 alias l='ls -CF'
 

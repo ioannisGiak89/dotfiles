@@ -15,6 +15,8 @@ apps=(
   mysql
   docker
   docker-machine
+  scala
+  sbt
 )
 
 brew install "${apps[@]}"

@@ -1,15 +1,15 @@
-#!/usr/bin/env bash
+ #!/usr/bin/env bash
 
 #ssh alias
-alias sparkbox='ssh -i /mnt/sysadmin/servers/sparkenergy.byng.uk.net/sparkenergy.pem root@sparkenergy.co.uk'
-alias sparkdevbox='ssh -i /mnt/sysadmin/servers/sparkenergy.byng.uk.net/sparkenergy.pem root@sparkdev.byng.uk.net'
-alias deva1='ssh -i /mnt/sysadmin/servers/dev-a1.byng.uk.net/dev-a1.pem root@dev-a1.byng.uk.net'
-alias vatplive='ssh -i /mnt/sysadmin/servers/vatp2.byng.uk.net/vatp2.pem root@54.72.199.43'
-alias oakamlive='ssh -i /mnt/sysadmin/servers/oakam.byng.uk.net/oakam.pem root@52.17.130.59'
-alias atlas='ssh -i /mnt/sysadmin/servers/ws01.atlas.byng.uk.net/atlascorp.pem root@ws01.atlas.byng.uk.net'
-alias consentz='ssh -i /mnt/sysadmin/servers/consentz-new-server/consentz.pem root@52.16.182.184'
-alias centos7='ssh -i /mnt/sysadmin/servers/test-centos7.byng.uk.net/test-centos7.pem root@development.pool.dev.byng.uk.net'
-alias poollive='ssh -i /mnt/sysadmin/servers/pool.byng.uk.net/pool.pem root@pool.byng.uk.net'
+alias sparkbox='ssh -i /Volumes/sysadmin/servers/sparkenergy.byng.uk.net/sparkenergy.pem root@sparkenergy.co.uk'
+alias sparkdevbox='ssh -i /Volumes/sysadmin/servers/sparkenergy.byng.uk.net/sparkenergy.pem root@sparkdev.byng.uk.net'
+alias deva1='ssh -i /Volumes/sysadmin/servers/dev-a1.byng.uk.net/dev-a1.pem root@dev-a1.byng.uk.net'
+alias vatplive='ssh -i /Volumes/sysadmin/servers/vatp2.byng.uk.net/vatp2.pem root@54.72.199.43'
+alias oakamlive='ssh -i /Volumes/sysadmin/servers/oakam.byng.uk.net/oakam.pem root@52.17.130.59'
+alias atlas='ssh -i /Volumes/sysadmin/servers/ws01.atlas.byng.uk.net/atlascorp.pem root@ws01.atlas.byng.uk.net'
+alias consentz='ssh -i /Volumes/sysadmin/servers/consentz-new-server/consentz.pem root@52.16.182.184'
+alias centos7='ssh -i /Volumes/sysadmin/servers/test-centos7.byng.uk.net/test-centos7.pem root@development.pool.dev.byng.uk.net'
+alias poollive='ssh -i /Volumes/sysadmin/servers/pool.byng.uk.net/pool.pem root@pool.byng.uk.net'
 
 # locale tail alias
 alias sparkloglocal='tail -f -n 0 /var/log/apache2/{*spark*/,}*log ~/Repos/*spark*/{var/,app/,}log{s,}/*log'
@@ -34,19 +34,18 @@ alias syncdemica='~/scripts/demica/demica-sync.sh'
 
 # create new project alias
 alias hosts='sudo vim /etc/hosts'
-alias sitesav='cd /etc/apache2/sites-available'
-alias sitesen='cd /etc/apache2/sites-enabled'
 alias cnsite='~/scripts/virtualhost/createwebsite.sh'
+alias sitesav='cd /etc/apache2/other'
 
 # apache alias
-alias reapache='sudo service apache2 restart'
-alias stpapache='sudo service apache2 stop'
-alias strapache='sudo service apache2 start'
+alias reapache='sudo apachectl restart'
+alias stpapache='sudo apachectl stop'
+alias strapache='sudo apachectl start'
 
 # mysql alias
-alias remysql='sudo service mysql restart'
-alias stpmysql='sudo service mysql stop'
-alias strmysql='sudo service mysql start'
+alias strmysql='mysql.server start'
+alias stpmysql='mysql.server stop'
+alias stsmysql='mysql.server status'
 alias mysql='mysql -uroot -ppassword'
 
 # vm for IE alias
@@ -60,8 +59,12 @@ alias stpma='stpmysql && stpapache'
 alias strma='strmysql && strapache'
 
 # docker projects alias
-alias strdocker='stpma && docker-compose up -d'
-alias strspyscape='cd ~/Repos/spyscape-cms && strdocker && git up && xdg-open http://spyscape.dev/admin'
+alias strdmachine='dinghy start && eval $(dinghy env)'
+alias strdocker='strdmachine && docker-compose up -d'
+alias docker_compose_reinstall='docker-compose kill && docker-compose rm -f && docker-compose up -d';
+
+
+alias strspyscape='cd ~/Repos/spyscape-cms && git up && strdocker && xdg-open http://spyscape.dev/admin'
 alias straffinity='cd ~/Repos/affinityship && strdocker && git up && xdg-open http://affinity.dev/admin'
 alias stricmm='cd ~/Repos/icmm-cms && strdocker && git up && xdg-open http://icmm.dev/admin'
 alias strhowden='cd ~/Repos/howdengroup && strdocker && git up && xdg-open http://howden-group.dev/admin'

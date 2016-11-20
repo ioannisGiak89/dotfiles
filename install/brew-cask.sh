@@ -3,6 +3,7 @@
 # Install packages
 
 apps=(
+  java
   dropbox
   firefox
   flux
