@@ -16,6 +16,7 @@ apps=(
   phpstorm
   mysqlworkbench
   virtualbox
+  docker-toolbox
 )
 
 brew cask install "${apps[@]}"
