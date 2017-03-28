@@ -1,4 +1,4 @@
- #!/usr/bin/env bash
+#!/usr/bin/env bash
 
 #ssh alias
 alias sparkbox='ssh -i /Volumes/sysadmin/servers/sparkenergy.byng.uk.net/sparkenergy.pem root@sparkenergy.co.uk'
@@ -8,9 +8,11 @@ alias vatplive='ssh -i /Volumes/sysadmin/servers/vatp2.byng.uk.net/vatp2.pem roo
 alias oakamlive='ssh -i /Volumes/sysadmin/servers/oakam.byng.uk.net/oakam.pem root@52.17.130.59'
 alias atlas='ssh -i /Volumes/sysadmin/servers/ws01.atlas.byng.uk.net/atlascorp.pem root@ws01.atlas.byng.uk.net'
 alias consentz='ssh -i /Volumes/sysadmin/servers/consentz-new-server/consentz.pem root@52.16.182.184'
-alias centos7='ssh -i /Volumes/sysadmin/servers/test-centos7.byng.uk.net/test-centos7.pem root@development.pool.dev.byng.uk.net'
+alias centos7='ssh -i /Volumes/sysadmin/servers/pooluat.byng.uk.net/pooluat.pem root@development.pool.dev.byng.uk.net'
 alias poollive='ssh -i /Volumes/sysadmin/servers/pool.byng.uk.net/pool.pem root@pool.byng.uk.net'
-
+alias devn1='ssh -i /Volumes/sysadmin/servers/dev-n1.byng.uk.net/dev-n1.pem root@dev-n1.byng.uk.net'
+alias vatpsurveys='ssh -i /Volumes/sysadmin/servers/virginsurveys.byng.uk.net/virginsurveys.pem root@virginsurveys.byng.uk.net'
+alias howdenlive='ssh -i /Volumes/sysadmin/servers/live1.byng.uk.net/live1.pem root@live1.byng.uk.net'
 # locale tail alias
 alias sparkloglocal='tail -f -n 0 /var/log/apache2/{*spark*/,}*log ~/Repos/*spark*/{var/,app/,}log{s,}/*log'
 alias vatploglocal='tail -f -n 0 /var/log/apache2/{*vatp2*/,}*log ~/Repos/*vatp2-cms*/website/{var/,app/,}log{s,}/*log'
@@ -31,6 +33,7 @@ alias syncaffinityship='~/scripts/affinityship-cms/affinityship-sync.sh'
 alias syncicmm='~/scripts/icmm-cms/icmm-sync.sh'
 alias synchowdengrp='~/scripts/howdengrp/howdengrp.sh'
 alias syncdemica='~/scripts/demica/demica-sync.sh'
+alias syncpaypoint='~/scripts/paypoint/paypoint-sync.sh'
 
 # create new project alias
 alias hosts='sudo vim /etc/hosts'
@@ -76,3 +79,10 @@ alias exec='~/scripts/docker/exec.sh'
 
 # gulp alias
 alias gbw='gulp build watch'
+
+# mount memory card
+alias memoryUnmount='diskutil unmountDisk /dev/disk2'
+alias memoryMount='memoryUnmount && sudo mount -w -t hfs /dev/disk2s1 ~/MemoryCard'
+
+# phpstorm
+alias pstorm='phpstorm'

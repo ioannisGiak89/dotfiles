@@ -17,6 +17,7 @@ apps=(
   mysqlworkbench
   virtualbox
   docker-toolbox
+  vagrant
 )
 
 brew cask install "${apps[@]}"
