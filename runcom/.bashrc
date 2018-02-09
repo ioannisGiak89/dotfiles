@@ -2,7 +2,6 @@
 
 export PATH=$PATH:~/bin
 export PATH=$PATH:/usr/local/bin/
-export PATH="$(brew --prefix homebrew/php/php70)/bin:$PATH"
 export GOROOT=/usr/local/opt/go/libexec
 export GOPATH=$HOME/.go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
@@ -29,10 +28,11 @@ if [ -f "$HOME/dotfiles/system/.git-alias" ]; then
     . "$HOME/dotfiles/system/.git-alias";
 fi
 
-if [ -f "$HOME/dotfiles/system/.rmv" ]; then
-    . "$HOME/dotfiles/system/.rmv";
-fi
+# if [ -f "$HOME/dotfiles/system/.rmv" ]; then
+#     . "$HOME/dotfiles/system/.rmv";
+# fi
 
-if [ -f "$HOME/dotfiles/system/.nvm" ]; then
-    . "$HOME/dotfiles/system/.nvm";
-fi
+# if [ -f "$HOME/dotfiles/system/.nvm" ]; then
+#     . "$HOME/dotfiles/system/.nvm";
+# fi
+export PATH="$PATH:$HOME/.tid/bin"

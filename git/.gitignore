@@ -4,3 +4,5 @@
 website/var/config/sqlreport/*.xml
 website/static/video
 .idea/
+/.cp-remote-settings.yml
+cp-remote-logs

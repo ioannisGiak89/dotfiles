@@ -13,6 +13,8 @@ alias poollive='ssh -i /Volumes/sysadmin/servers/pool.byng.uk.net/pool.pem root@
 alias devn1='ssh -i /Volumes/sysadmin/servers/dev-n1.byng.uk.net/dev-n1.pem root@dev-n1.byng.uk.net'
 alias vatpsurveys='ssh -i /Volumes/sysadmin/servers/virginsurveys.byng.uk.net/virginsurveys.pem root@virginsurveys.byng.uk.net'
 alias howdenlive='ssh -i /Volumes/sysadmin/servers/live1.byng.uk.net/live1.pem root@live1.byng.uk.net'
+alias jenkins='ssh -i /Volumes/sysadmin/servers/jenkins.byng.co/jenkins.pem root@jenkins.byng.co'
+
 # locale tail alias
 alias sparkloglocal='tail -f -n 0 /var/log/apache2/{*spark*/,}*log ~/Repos/*spark*/{var/,app/,}log{s,}/*log'
 alias vatploglocal='tail -f -n 0 /var/log/apache2/{*vatp2*/,}*log ~/Repos/*vatp2-cms*/website/{var/,app/,}log{s,}/*log'
@@ -63,7 +65,7 @@ alias strma='strmysql && strapache'
 
 # docker projects alias
 alias strdmachine='dinghy start && eval $(dinghy env)'
-alias strdocker='strdmachine && docker-compose up -d'
+alias strdocker='strdmachine && docker-compose up'
 alias docker_compose_reinstall='docker-compose kill && docker-compose rm -f && docker-compose up -d';
 
 
@@ -86,3 +88,56 @@ alias memoryMount='memoryUnmount && sudo mount -w -t hfs /dev/disk2s1 ~/MemoryCa
 
 # phpstorm
 alias pstorm='phpstorm'
+
+# go
+alias gi='go install ./...'
+alias gwi='watch go install ./...'
+alias gwl='watch -n5 golint $(go list ./... | grep -v vendor | grep -v proto)'
+
+# docker
+alias composer='docker run --rm -it -v $PWD:/app composer'
+alias dnl='docker network ls'
+alias udin='unset ${!DOCKER*}'
+function dnc {
+    \docker network connect $1 dinghy_http_proxy
+}
+eval $(dinghy env)
+
+# php
+alias php56='/usr/local/opt/php56/bin/php'
+
+# phpSpec
+alias psr='bin/phpspec run'
+alias psrv='bin/phpspec run -vvv'
+alias psd='bin/phpspec desc'
+
+function composer7 {
+     \docker run \
+        --rm -it \
+        -e PHP_UID=$(id -u) \
+        -e PHP_GID=$(id -g) \
+        -e PHP_SHELL=1 \
+        -v $PWD:/opt/www \
+        -v ~/.composer:/home/php/composer \
+        -v ~/.ssh:/home/php/.ssh:ro \
+        -w /opt/www \
+        seeruk/php-fpm:7.1-dev \
+        /home/php/composer/composer.phar $@
+}
+
+function composer5.6 {
+     \docker run \
+        --rm -it \
+        -e PHP_UID=$(id -u) \
+        -e PHP_GID=$(id -g) \
+        -e PHP_SHELL=1 \
+        -v $PWD:/opt/www \
+        -v ~/.composer:/home/php/composer \
+        -v ~/.ssh:/home/php/.ssh:ro \
+        -w /opt/www \
+        seeruk/php-fpm:5.6-dev \
+        /home/php/composer/composer.phar $@
+}
+
+# Coppy shh key
+alias cps="pbcopy < ~/.ssh/id_rsa.pub"
